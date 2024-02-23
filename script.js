@@ -42,9 +42,9 @@
 
 // --------------- PROMISES -------------
 
-const testpromise = new Promise((res,rej)=>{
-    console.log("hi");
-})
+// const testpromise = new Promise((res,rej)=>{
+//     console.log("hi");
+// })
 
 
 async function addFive(a){
@@ -61,10 +61,33 @@ async function addFive(a){
     })
 }
 
-const pr =  addFive(8);
+// const pr =  addFive(8);
 
 
 // this thing runs for resolve
-pr.then((res) => console.log(res,"this is res"))
+// pr.then((res) => console.log(res,"this is res"))
 // this thing runs when there is reject returned ie. ERROR
-pr.catch((err) => console.log("ERROR: ",err))
+// pr.catch((err) => console.log("ERROR: ",err))
+
+//--------------await--------------
+
+async function sample(){
+    await addFive(7).then((res)=>{
+        console.log("lol");
+    });
+    console.log("getting next number");
+    await addFive().then((res)=>{
+         console.log(res,"is the number")
+    }).catch((rej)=>{
+        console.log("Error:",rej);
+    })
+    console.log("getting next number");
+    await addFive("dt").then((res)=>{
+        console.log("Good")
+    }).catch((err)=>{
+        console.log("Error:",err)
+    })
+    console.log("success");
+}
+
+sample()
