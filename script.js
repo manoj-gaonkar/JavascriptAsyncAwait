@@ -1,50 +1,50 @@
-// const delay = ms => new Promise(res => setTimeout(res, ms));
-// const getFruit = async (name) => {
-//     fruits = {
-//         "a":"apple",
-//         "b":"Mango",
-//         "c":"Banana"
-//     }
+const delay = ms => new Promise(res => setTimeout(res, ms));
+const getFruit = async (name) => {
+    fruits = {
+        "a":"apple",
+        "b":"Mango",
+        "c":"Banana"
+    }
    
-//     await delay(3000)
-//     return fruits[name]
-// }
+    await delay(3000)
+    return fruits[name]
+}
 
-// console.log(getFruit("a"));
+console.log(getFruit("a"));
 
-// async function getFruits(){
-//     const a = await getFruit("a");
-//     console.log(a);
+async function getFruits(){
+    const a = await getFruit("a");
+    console.log(a);
 
-//     const b = await getFruit("b");
-//     console.log(b);
+    const b = await getFruit("b");
+    console.log(b);
 
-// }
+}
 
-// console.log(getFruits());
+console.log(getFruits());
 
 
 // ----------CALLBACK FUNCTIONS -----------
 
-// function called(name,calledCallBack){
-//     setTimeout(()=>{
-//         console.log(name);
-//         if(calledCallBack) calledCallBack();
-//     },2000)
-// }
+function called(name,calledCallBack){
+    setTimeout(()=>{
+        console.log(name);
+        if(calledCallBack) calledCallBack();
+    },2000)
+}
 
-// called("data is being retrived",()=>{
-//     called("still retriving data",() => {
-//         called("Timeout")
-//     });
-// })
+called("data is being retrived",()=>{
+    called("still retriving data",() => {
+        called("Timeout")
+    });
+})
 
 
 // --------------- PROMISES -------------
 
-// const testpromise = new Promise((res,rej)=>{
-//     console.log("hi");
-// })
+const testpromise = new Promise((res,rej)=>{
+    console.log("hi");
+})
 
 
 async function addFive(a){
@@ -61,13 +61,13 @@ async function addFive(a){
     })
 }
 
-// const pr =  addFive(8);
+const pr =  addFive(8);
 
 
 // this thing runs for resolve
-// pr.then((res) => console.log(res,"this is res"))
+pr.then((res) => console.log(res,"this is res"))
 // this thing runs when there is reject returned ie. ERROR
-// pr.catch((err) => console.log("ERROR: ",err))
+pr.catch((err) => console.log("ERROR: ",err))
 
 //--------------await--------------
 
