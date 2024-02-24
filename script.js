@@ -90,4 +90,14 @@ async function sample(){
     console.log("success");
 }
 
-sample()
+sample();
+
+
+// -------------------IIFE (immediately invoked function expression)-----------------
+// this function runs only once --> can't run once more cause there's no name to it
+// the fun fact is that the sentence or command or code before the iife function should end with a  ";" colon // otherwise it will show an error
+(
+    () => {
+        console.log("This is an IIFE Function");
+    }
+)();
